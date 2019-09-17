@@ -1,59 +1,47 @@
 #!/bin/bash
 #######################################################
-# ALIAS'S
+# ALIASES
 #######################################################
 
-# To temporarily bypass an alias, we preceed the command with a \
-# EG: the ls command is aliased, but to use the normal ls command you would type \ls
-
-# Add an "alert" alias for long running commands.  Use like so:
-#   sleep 10; alert
+# Add an "alert" alias for long running commands.  Use like so: sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
 # Repeat the last command with sudo prefixed
 alias please='sudo $(fc -ln -1)'
 
+# Open with default application
+alias open='xdg-open'
+
 # .bashrc commands
-alias bashrc='edit ~/.bashrc'
 alias source_bashrc='. ~/.bashrc'
+alias bashrc='edit ~/.bashrc'
 alias bash_aliases='edit ~/.bash_aliases'
 
+# Apt aliases
+alias apt='sudo apt'
 
-# Alias's to modified commands
+# support cls
+alias cls='clear'
+
+# more informative commands
 alias cp='cp -i'
 alias mv='mv -i'
 alias rm='rm -iv'
 alias mkdir='mkdir -p'
 alias ps='ps auxf'
-alias ping='ping -c 10'
 alias less='less -R'
-alias cls='clear'
-alias apt='sudo apt'
 alias multitail='multitail --no-repeat -c'
 alias vi='vim'
 
 # Change directory aliases
-alias home='cd ~'
 alias cd..='cd ..'
-alias ..='cd ..'
-alias ...='cd ../..'
-alias ....='cd ../../..'
-alias .....='cd ../../../..'
 
-# Alias's for multiple directory listing commands
+# ls aliases
 alias ls='ls -aFh --color=always' # add colors and file type extensions
-alias l='ls -CF' # directories
+alias l='ls -CF'
 alias la='ls -Alh' # show hidden files
-alias lx='ls -lXBh' # sort by extension
-alias lk='ls -lSrh' # sort by size
-alias lc='ls -lcrh' # sort by change time
-alias lu='ls -lurh' # sort by access time
-alias lr='ls -lRh' # recursive ls
-alias lt='ls -ltrh' # sort by date
-alias lm='ls -alh |more' # pipe through 'more'
 alias lw='ls -xAh' # wide listing format
 alias ll='ls -Fls' # long listing format
-alias labc='ls -lap' #alphabetical sort
 alias lf="ls -l | egrep -v '^d'" # files only
 alias ldir="ls -l | egrep '^d'" # directories only
 
@@ -77,21 +65,6 @@ alias f="find . | grep "
 
 # Count all files (recursively) in the current folder
 alias countfiles="for t in files links directories; do echo \`find . -type \${t:0:1} | wc -l\` \$t; done 2> /dev/null"
-
-# To see if a command is aliased, a file, or a built-in command
-alias checkcommand="type -t"
-
-# Alias's for safe and forced reboots
-alias rebootsafe='sudo shutdown -r now'
-alias rebootforce='sudo shutdown -r -n now'
-
-# Alias's to show disk space and space used in a folder
-alias diskspace="du -S | sort -n -r |more"
-alias folders='du -h --max-depth=1'
-alias folderssort='find . -maxdepth 1 -type d -print0 | xargs -0 du -sk | sort -rn'
-alias tree='tree -CAhF --dirsfirst'
-alias treed='tree -CAFd'
-alias mountedinfo='df -hT'
 
 # Alias's for archives
 alias mktar='tar -cvf'
@@ -179,10 +152,13 @@ install_bashrc_commands ()
 		sudo apt install fd-find 
 		# fzf is a general-purpose command-line fuzzy finder.
 		sudo apt install fzf 
+		# fasd offers quick access to files and directories for POSIX shells
+		sudo apt install fasd
 		# ripgrep is a line-oriented search tool that recursively searches your current directory for a regex pattern.
 		sudo apt install ripgrep
 		# show fortunes
 		sudo apt install fortune-mod
+		# make the cow say things
 		sudo apt install cowsay
 		
 		# PIP

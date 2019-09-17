@@ -64,23 +64,26 @@ elif [ -f /etc/bash_completion ]; then
 fi
 
 # Support for fuck command
-if [ -f /usr/local/bin/fuck ]; then
+if type fuck &> /dev/null; then
 	eval "$(thefuck --alias)"
 fi
 
 # cow says funny things
-if [ -f /usr/games/fortune ]; then
-	if [ -f /usr/games/cowsay ]; then
+if type fortune &> /dev/null; then
+	if type cowsay &> /dev/null; then
 		fortune | cowsay
 	fi
 fi
 
 # fzf keybindings
-if [ -f /usr/bin/fzf ]; then
+if type fzf &> /dev/null; then
 . /usr/share/doc/fzf/examples/key-bindings.bash
 fi
 
-
+# fasd setup
+if type fasd &> /dev/null; then
+	eval "$(fasd --init auto)"
+fi
 
 #######################################################
 # COLORS AND PROMPT
