@@ -164,7 +164,7 @@ distribution ()
 }
 
 # Automatically install the needed support files for this .bashrc file
-install_bashrc_support ()
+install_bashrc_commands ()
 {
 	local dtype
 	dtype=$(distribution)
@@ -190,9 +190,9 @@ install_bashrc_support ()
 		# NPM
 		sudo apt install npm
 		# undollar strips the dollar sign from the beginning of the terminal command you just copied from StackOverflow
-		npm install -g undollar
+		sudo npm install -g undollar
 		# A collection of simplified and community-driven man pages.
-		npm install -g tldr
+		sudo npm install -g tldr
 	elif [ $dtype == "redhat" ]; then
 		echo "please add redhat support and make a pull request"
 	else
