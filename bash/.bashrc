@@ -75,6 +75,13 @@ if [ -f /usr/games/fortune ]; then
 	fi
 fi
 
+# fzf keybindings
+if [ -f /usr/bin/fzf ]; then
+. /usr/share/doc/fzf/examples/key-bindings.bash
+fi
+
+
+
 #######################################################
 # COLORS AND PROMPT
 #######################################################
