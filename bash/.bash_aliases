@@ -41,9 +41,9 @@ alias ....='cd ../../..'
 alias .....='cd ../../../..'
 
 # Alias's for multiple directory listing commands
+alias ls='ls -aFh --color=always' # add colors and file type extensions
 alias l='ls -CF' # directories
 alias la='ls -Alh' # show hidden files
-alias ls='ls -aFh --color=always' # add colors and file type extensions
 alias lx='ls -lXBh' # sort by extension
 alias lk='ls -lSrh' # sort by size
 alias lc='ls -lcrh' # sort by change time
@@ -181,6 +181,9 @@ install_bashrc_commands ()
 		sudo apt install fzf 
 		# ripgrep is a line-oriented search tool that recursively searches your current directory for a regex pattern.
 		sudo apt install ripgrep
+		# show fortunes
+		sudo apt install fortune-mod
+		sudo apt install cowsay
 		
 		# PIP
 		sudo apt install python3-dev python3-pip python3-setuptools
