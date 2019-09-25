@@ -17,29 +17,31 @@ alias source_bashrc='. ~/.bashrc'
 alias bashrc='edit ~/.bashrc'
 alias bash_aliases='edit ~/.bash_aliases'
 
-# Apt aliases
+# Apt is always sudo
 alias apt='sudo apt'
 
-# support cls
+# Support cls
 alias cls='clear'
 
-# more informative commands
+# More informative commands
 alias cp='cp -v'
 alias mv='mv -v'
 alias rm='rm -v'
 
 # always make full path
 alias mkdir='mkdir -p'
-# show all processes
-alias ps='ps auxf'
 
-# remove redundant log entries
+# show processes
+alias ps='ps auxf'
+alias topcpu="/bin/ps -eo pcpu,pid,user,args | sort -k 1 -r | head -10"
+
+# Don't multitail redundant log entries
 alias multitail='multitail --no-repeat -c'
 
 # vi is vim
 alias vi='vim'
 
-# Change directory aliases
+# cd typo aliases
 alias cd..='cd ..'
 
 # ls aliases
@@ -59,23 +61,18 @@ alias 666='chmod -R 666'
 alias 755='chmod -R 755'
 alias 777='chmod -R 777'
 
-# Search command line history
-alias h="history | grep "
-
-# Search running processes
-alias p="ps aux | grep "
-alias topcpu="/bin/ps -eo pcpu,pid,user,args | sort -k 1 -r | head -10"
-
 # Search files in the current folder
 alias f="find . | grep "
 
 # Count all files (recursively) in the current folder
 alias countfiles="for t in files links directories; do echo \`find . -type \${t:0:1} | wc -l\` \$t; done 2> /dev/null"
 
-# Alias's for archives
+# Compress files
 alias mktar='tar -cvf'
 alias mkbz2='tar -cvjf'
 alias mkgz='tar -cvzf'
+
+# Decompress files
 alias untar='tar -xvf'
 alias unbz2='tar -xvjf'
 alias ungz='tar -xvzf'
@@ -174,8 +171,6 @@ install_bashrc_commands ()
 		
 		# NPM
 		sudo apt install npm
-		# undollar strips the dollar sign from the beginning of the terminal command you just copied from StackOverflow
-		sudo npm install -g undollar
 		# A collection of simplified and community-driven man pages.
 		sudo npm install -g tldr
 	elif [ $dtype == "redhat" ]; then
@@ -183,4 +178,7 @@ install_bashrc_commands ()
 	else
 		echo "unsupported distribution, you must install manually"
 	fi
+
+	# resource bashrc
+	. ~/.bashrc
 }
