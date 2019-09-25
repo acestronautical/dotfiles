@@ -1,6 +1,6 @@
 [Desktop Entry]
 Type=Application
-Exec=sh -c "$HOME/xmodmap.sh"
+Exec=sh -c "$HOME/.xmodmap.sh"
 Hidden=false
 X-GNOME-Autostart-enabled=true
 Name=xmodmap
