@@ -24,13 +24,19 @@ alias apt='sudo apt'
 alias cls='clear'
 
 # more informative commands
-alias cp='cp -i'
-alias mv='mv -i'
-alias rm='rm -iv'
+alias cp='cp -v'
+alias mv='mv -v'
+alias rm='rm -v'
+
+# always make full path
 alias mkdir='mkdir -p'
+# show all processes
 alias ps='ps auxf'
-alias less='less -R'
+
+# remove redundant log entries
 alias multitail='multitail --no-repeat -c'
+
+# vi is vim
 alias vi='vim'
 
 # Change directory aliases
