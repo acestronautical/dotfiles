@@ -1,19 +1,32 @@
-! Caps lock as Mode_switch
+! CAPS LOCK AS MODE_SWITCH
 keycode 66 = Mode_switch
 
-! Arrow Keys
+! BOTH SHIFT KEYS AS CAPS_LOCK
+keysym Shift_R = Shift_R Caps_Lock Shift_R
+keysym Shift_L = Shift_L Caps_Lock Shift_L
+
+! ARROWS - INVERTED T
 keysym j = j J Left 
 keysym l = l L Right 
 keysym i = i I Up
 keysym k = k K Down
-
 ! Other Navigation Keys
 keysym u = u U Prior
 keysym o = o O Next
 keysym y = y Y Home
 keysym h = h H End
-keysym semicolon = semicolon colon Insert
 
-! Both shift keys to as Caps_Lock
-keysym Shift_R = Shift_R Caps_Lock Shift_R
-keysym Shift_L = Shift_L Caps_Lock Shift_L
+
+! ARROWS - VIM STYLE (uncomment to use)
+! keysym h = h H Left
+! keysym j = j J Down
+! keysym k = k K Up
+! keysym l = l L Right 
+! ! Other Navigation Keys
+! keysym y = y Y Home
+! keysym u = u U Prior
+! keysym i = i I Next
+! keysym o = o O End
+
+
+
