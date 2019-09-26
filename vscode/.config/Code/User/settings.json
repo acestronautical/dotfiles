@@ -1,19 +1,36 @@
 {
-    "explorer.confirmDelete": false,
-    "window.titleBarStyle": "custom",
-    "C_Cpp.clang_format_style": "LLVM",
-    "explorer.confirmDragAndDrop": false,
-    "git.enableSmartCommit": true,
-    "git.autofetch": true,
-    "terminal.integrated.fontSize": 13,
-    "workbench.editor.enablePreview": false,
-    "editor.minimap.enabled": false,
+    // Visual guide for line limit
+    "editor.rulers": [
+        80
+    ],
+    // Don't complete brackets or quotes
     "editor.autoClosingBrackets": "never",
     "editor.autoClosingQuotes": "never",
+    // Turn off code map
+    "editor.minimap.enabled": false,
+    // Wrap long lines
+    "editor.wordWrap": "on",
+    // Don't blink
+    "editor.cursorBlinking": "solid",
+    // Show whitespace when highlighting
+    "editor.renderWhitespace": "selection",
+    // Try to fix indentation during copy paste
+    "editor.autoIndent": true,
+    // Save space on linux
+    "window.titleBarStyle": "custom",
+    // Fix missing underscores
+    "terminal.integrated.fontSize": 13,
+    // Don't ask when I delete or move files
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false,
+    // Format c and cpp to LLVM
+    "C_Cpp.clang_format_style": "LLVM",
+    // git commit all and fetch automatically
+    "git.enableSmartCommit": true,
+    "git.autofetch": true,
+    // Don't overwrite tabs
+    "workbench.editor.enablePreview": false,
+    // Disable telemetry
     "telemetry.enableTelemetry": false,
-    "rest-client.enableTelemetry": false,
     "telemetry.enableCrashReporter": false,
-    "[javascript]": {
-        "editor.defaultFormatter": "vscode.typescript-language-features"
-    }
 }
