@@ -1,33 +1,34 @@
 // Place your key bindings in this file to override the defaultsauto[]
 [
     {
-        "key": "home",
-        "command": "cursorWordAccessibilityLeft",
-        "when": "accessibilityModeEnabled && textInputFocus"
-    },
-    {
         "key": "ctrl+left",
-        "command": "-cursorWordAccessibilityLeft",
-        "when": "accessibilityModeEnabled && textInputFocus"
-    },
-    {
-        "key": "end",
-        "command": "cursorWordAccessibilityRight",
-        "when": "accessibilityModeEnabled && textInputFocus"
+        "command": "-cursorWordStartLeft",
+        "when": "textInputFocus"
     },
     {
         "key": "ctrl+right",
-        "command": "-cursorWordAccessibilityRight",
-        "when": "accessibilityModeEnabled && textInputFocus"
-    },
-    {
-        "key": "home",
-        "command": "-cursorHome",
+        "command": "-cursorWordEndRight",
         "when": "textInputFocus"
     },
     {
-        "key": "end",
-        "command": "-cursorEnd",
+        "key": "pageup",
+        "command": "-cursorPageUp",
+        "when": "textInputFocus"
+    },
+    {
+        "key": "pagedown",
+        "command": "-cursorPageDown",
+        "when": "textInputFocus"
+    },
+    {
+        "key": "pageup",
+        "command": "cursorWordStartLeft",
+        "when": "textInputFocus"
+    },
+    {
+        "key": "pagedown",
+        "command": "cursorWordEndRight",
         "when": "textInputFocus"
     }
+   
 ]

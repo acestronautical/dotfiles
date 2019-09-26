@@ -8,10 +8,10 @@ keysym i = i I Up
 keysym k = k K Down
 
 ! Other Navigation Keys
-keysym u = u U Home
-keysym o = o O End
-keysym y = y Y Prior
-keysym h = h h Next
+keysym u = u U Prior
+keysym o = o O Next
+keysym y = y Y Home
+keysym h = h H End
 keysym semicolon = semicolon colon Insert
 
 ! Both shift keys to as Caps_Lock

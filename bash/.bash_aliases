@@ -151,12 +151,8 @@ install_bashrc_commands ()
 		sudo apt install multitail 
 		# Tree is a recursive directory listing program that produces a depth indented listing of files. 
 		sudo apt install tree 
-		# fd is a simple, fast and user-friendly alternative to find
-		sudo apt install fd-find 
 		# fzf is a general-purpose command-line fuzzy finder.
 		sudo apt install fzf 
-		# fasd offers quick access to files and directories for POSIX shells
-		sudo apt install fasd
 		# ripgrep is a line-oriented search tool that recursively searches your current directory for a regex pattern.
 		sudo apt install ripgrep
 		# show fortunes
