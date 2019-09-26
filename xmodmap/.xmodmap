@@ -27,6 +27,3 @@ keysym h = h H End
 ! keysym u = u U Prior
 ! keysym i = i I Next
 ! keysym o = o O End
-
-
-
