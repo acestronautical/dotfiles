@@ -80,11 +80,6 @@ if type fzf &> /dev/null; then
 . /usr/share/doc/fzf/examples/key-bindings.bash
 fi
 
-# fasd setup
-if type fasd &> /dev/null; then
-	eval "$(fasd --init auto)"
-fi
-
 #######################################################
 # COLORS AND PROMPT
 #######################################################
@@ -180,25 +175,16 @@ function __setprompt
 	PS1+="\n"
 
 	# Current directory
-	PS1+="\[${DARKGRAY}\]\w "
+	PS1+="\[${LIGHTGRAY}\]\w "
 
 	# Time
-	PS1+="\[${DARKGRAY}\]\t " 
+	PS1+="\[${LIGHTGRAY}\]\t " 
 
 	# Skip to the next line
 	PS1+="\n"
 
-	# User and server
-	# local SSH_IP=`echo $SSH_CLIENT | awk '{ print $1 }'`
-	# local SSH2_IP=`echo $SSH2_CLIENT | awk '{ print $1 }'`
-	# if [ $SSH2_IP ] || [ $SSH_IP ] ; then
-	# 	PS1+="(\[${GREEN}\]\u@\h"
-	# else
-	# 	PS1+="\[${GREEN}\]\u"
-	# fi
-
 	# Git Branch
-	PS1+="\[${GREEN}\]\$(git_branch)"           # prints current branch
+	PS1+="\[${GREEN}\]\$(git_branch)"       # prints current branch
 
 	if [[ $EUID -ne 0 ]]; then
 		PS1+="\[${GREEN}\]$\[${NOCOLOR}\] " # Normal user
