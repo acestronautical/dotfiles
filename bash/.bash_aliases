@@ -12,11 +12,6 @@ alias please='sudo $(fc -ln -1)'
 # Open with default application
 alias open='xdg-open'
 
-# .bashrc commands
-alias source_bashrc='. ~/.bashrc'
-alias bashrc='edit ~/.bashrc'
-alias bash_aliases='edit ~/.bash_aliases'
-
 # Apt is always sudo
 alias apt='sudo apt'
 
@@ -30,13 +25,6 @@ alias rm='rm -v'
 
 # always make full path
 alias mkdir='mkdir -p'
-
-# show processes
-alias ps='ps auxf'
-alias topcpu="/bin/ps -eo pcpu,pid,user,args | sort -k 1 -r | head -10"
-
-# Don't multitail redundant log entries
-alias multitail='multitail --no-repeat -c'
 
 # vi is vim
 alias vi='vim'
@@ -60,12 +48,6 @@ alias 644='chmod -R 644'
 alias 666='chmod -R 666'
 alias 755='chmod -R 755'
 alias 777='chmod -R 777'
-
-# Search files in the current folder
-alias f="find . | grep "
-
-# Count all files (recursively) in the current folder
-alias countfiles="for t in files links directories; do echo \`find . -type \${t:0:1} | wc -l\` \$t; done 2> /dev/null"
 
 # Compress files
 alias mktar='tar -cvf'
@@ -155,6 +137,8 @@ install_bashrc_commands ()
 		sudo apt install fzf 
 		# ripgrep is a line-oriented search tool that recursively searches your current directory for a regex pattern.
 		sudo apt install ripgrep
+		# wordnet is a commandline thesaurus and dictionary
+		sudo apt install wordnet
 		# show fortunes
 		sudo apt install fortune-mod
 		# make the cow say things
@@ -169,6 +153,7 @@ install_bashrc_commands ()
 		sudo apt install npm
 		# A collection of simplified and community-driven man pages.
 		sudo npm install -g tldr
+		
 	elif [ $dtype == "redhat" ]; then
 		echo "please add redhat support and make a pull request"
 	else

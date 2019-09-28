@@ -23,8 +23,6 @@
     // Don't ask when I delete or move files
     "explorer.confirmDelete": false,
     "explorer.confirmDragAndDrop": false,
-    // Format c and cpp to LLVM
-    "C_Cpp.clang_format_style": "LLVM",
     // git commit all and fetch automatically
     "git.enableSmartCommit": true,
     "git.autofetch": true,
@@ -33,4 +31,7 @@
     // Disable telemetry
     "telemetry.enableTelemetry": false,
     "telemetry.enableCrashReporter": false,
+    "terminal.integrated.rendererType": "dom",
+    "C_Cpp.clang_format_fallbackStyle": "LLVM",
+    "C_Cpp.updateChannel": "Insiders",
 }

@@ -17,7 +17,7 @@ keysym y = y Y Home
 keysym h = h H End
 
 
-! ARROWS - VIM STYLE (uncomment to use)
+! ! ARROWS - VIM STYLE (uncomment to use)
 ! keysym h = h H Left
 ! keysym j = j J Down
 ! keysym k = k K Up
