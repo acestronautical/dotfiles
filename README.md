@@ -28,7 +28,7 @@ Some parts of the .bashrc configuration (such as cowsay/fortune) require running
 
 ## git
 
-work in progress
+Make sure to change name and email to your own name and email!!!
 
 ## vscode
 
