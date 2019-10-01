@@ -32,8 +32,10 @@ Make sure to change name and email to your own name and email!!!
 
 ## vscode
 
-vscode files are located in .config/Code/User. You will need to delete your existing vscode files before stow will work. Alternatively you may manually copy and paste.
+vscode files are located in ```~/.config/Code/User```. You will need to delete your existing vscode files before stow will work. Alternatively you may manually copy and paste the lines you would like.
 
 ## xmodmap
 
-xmodmap will overload capslock to function as escape when pressed, and when held will provide arrow keys on the right hand home row. To change from inverted-T to vim style arrows edit the .xmodmap file. Note that you will need to ```chmod +x .xmodmap.sh''' and install the dependency xcape '''sudo apt install xcape'''
+xmodmap will overload capslock to function as escape when pressed, and when held will provide arrow keys on the right hand home row. To change from inverted-T to vim style arrows edit the .xmodmap file. 
+
+Note: you will need to ```chmod +x .xmodmap.sh``` then install the dependency xcape ```sudo apt install xcape```
