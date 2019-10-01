@@ -10,9 +10,9 @@ git clone https://github.com/Ace-Cassidy/dotfiles.git
 stow <configuration>
 ```
 
-To install a configuration simply execute ```stow <folder>``` from within this directory. 
+To install a configuration simply execute ```stow <folder>``` from within the dotfiles directory. 
 
-For example ```stow bash``` will create a symlinks in ~ for .bashrc and .bash_aliases
+For example ```stow bash``` will create symlinks in ~ for .bashrc and .bash_aliases
 
 ## Why isn't it working?
 
