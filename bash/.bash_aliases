@@ -129,30 +129,29 @@ install_bashrc_commands ()
 
 	if [ $dtype == "debian" ]; then
 		# APT
-		# MultiTail allows you to monitor logfiles and command output in multiple windows.
-		sudo apt install multitail 
+		# Terminator is a terminal emulator which supports split layouts
+		sudo apt install -y terminator
 		# Tree is a recursive directory listing program that produces a depth indented listing of files. 
-		sudo apt install tree 
+		sudo apt install -y tree 
 		# fzf is a general-purpose command-line fuzzy finder.
-		sudo apt install fzf 
+		sudo apt install -y fzf 
 		# ripgrep is a line-oriented search tool that recursively searches your current directory for a regex pattern.
-		sudo apt install ripgrep
+		sudo apt install -y ripgrep
+		# bat is a cat clone with added syntax highlighting
+		sudo apt install -y bat
 		# wordnet is a commandline thesaurus and dictionary
-		sudo apt install wordnet
+		sudo apt install -y wordnet
+		# tldr shows usage examples of a command, similar to man
+		sudo apt install -y tldr
+		# fuck attempts to autocorrect the spelling of your last entered command
+		sudo apt install -y thefuck
 		# show fortunes
-		sudo apt install fortune-mod
+		sudo apt install -y fortune-mod
 		# make the cow say things
-		sudo apt install cowsay
-		
-		# PIP
-		sudo apt install python3-dev python3-pip python3-setuptools
-		# The Fuck is a magnificent app that corrects errors in previous console commands.
-		sudo pip3 install thefuck
-		
-		# NPM
-		sudo apt install npm
-		# A collection of simplified and community-driven man pages.
-		sudo npm install -g tldr
+		sudo apt install -y cowsay
+		# MultiTail allows you to monitor logfiles and command output in multiple windows.
+		sudo apt install -y multitail 
+	
 		
 	elif [ $dtype == "redhat" ]; then
 		echo "please add redhat support and make a pull request"

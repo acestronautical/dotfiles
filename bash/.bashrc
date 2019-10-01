@@ -64,11 +64,16 @@ elif [ -f /etc/bash_completion ]; then
 fi
 
 # Support for fuck command
-if type fuck &> /dev/null; then
+if type thefuck &> /dev/null; then
 	eval "$(thefuck --alias)"
 fi
 
-# cow says funny things
+# Replace cat with bat
+if type bat &> /dev/null; then
+	alias cat='bat'
+fi
+
+# Cow says things
 if type fortune &> /dev/null; then
 	if type cowsay &> /dev/null; then
 		fortune | cowsay
@@ -117,8 +122,7 @@ export LESS_TERMCAP_us=$'\E[01;32m'
 export CLICOLOR=1
 
 function git_branch() {
-  # On branches, this will return the branch name
-  # On non-branches, nothing
+  # On branches this will return the branch name, else empty string
   ref="$(git symbolic-ref HEAD 2> /dev/null | sed -e 's/refs\/heads\///')"
   if [[ "$ref" != "" ]]; then
     echo "($ref)"
@@ -184,12 +188,12 @@ function __setprompt
 	PS1+="\n"
 
 	# Git Branch
-	PS1+="\[${GREEN}\]\$(git_branch)"       # prints current branch
+	PS1+="\[${GREEN}\]\$(git_branch)"
 
 	if [[ $EUID -ne 0 ]]; then
 		PS1+="\[${GREEN}\]$\[${NOCOLOR}\] " # Normal user
 	else
-		PS1+="\[${GREEN}\]#\[${NOCOLOR}\] " # Root user
+		PS1+="\[${LIGHTRED}\]#\[${NOCOLOR}\] " # Root user
 	fi
 
 	# PS2 is used to continue a command using the \ character
