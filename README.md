@@ -1,6 +1,6 @@
-# My Dotfiles
+# Ace Cassidy's Dotfiles
 
-Managed with [stow](https://www.gnu.org/software/stow/)
+A sensible and minimal set of configurations optimized for debian/ubuntu
 
 ## Install
 
