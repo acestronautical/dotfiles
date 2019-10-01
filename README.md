@@ -2,6 +2,8 @@
 
 A sensible and minimal set of configurations optimized for debian/ubuntu
 
+![screenshot](screenshot.png)
+
 ## Install
 
 ```
