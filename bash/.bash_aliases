@@ -22,24 +22,27 @@ alias cls='clear'
 alias cp='cp -v'
 alias mv='mv -v'
 alias rm='rm -v'
-
 # always make full path
-alias mkdir='mkdir -p'
+alias mkdir='mkdir -p -v'
 
 # vi is vim
 alias vi='vim'
 
-# cd typo aliases
+# cd typo alias
 alias cd..='cd ..'
 
 # ls aliases
-alias ls='ls -aFh --color=always' # add colors and file type extensions
+alias ls='ls -ahF --color=auto'
+alias ll='ls -alF'
+alias la='ls -A'
 alias l='ls -CF'
-alias la='ls -Alh' # show hidden files
-alias lw='ls -xAh' # wide listing format
-alias ll='ls -Fls' # long listing format
-alias lf="ls -l | egrep -v '^d'" # files only
-alias ldir="ls -l | egrep '^d'" # directories only
+
+# color aliases
+alias dir='dir --color=auto'
+alias vdir='vdir --color=auto'
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
 
 # alias chmod commands
 alias mx='chmod a+x'
@@ -76,7 +79,7 @@ cd ()
  	fi
 }
 
-# Extracts any archive(s) (if unp isn't installed)
+# Extract any archive(s) 
 extract () {
 	for archive in $*; do
 		if [ -f $archive ] ; then
@@ -100,7 +103,7 @@ extract () {
 	done
 }
 
-# Show the current distribution
+# Detect the current linux distribution variant
 distribution ()
 {
 	local dtype
@@ -121,37 +124,42 @@ distribution ()
 	echo $dtype
 }
 
-# Automatically install the needed support files for this .bashrc file
+# Install recommended commands for this .bashrc file
 install_bashrc_commands ()
 {
 	local dtype
 	dtype=$(distribution)
 
 	if [ $dtype == "debian" ]; then
-		# APT
-		# Terminator is a terminal emulator which supports split layouts
-		sudo apt install -y terminator
-		# Tree is a recursive directory listing program that produces a depth indented listing of files. 
-		sudo apt install -y tree 
+
 		# fzf is a general-purpose command-line fuzzy finder.
-		sudo apt install -y fzf 
+		sudo apt install -y fzf
+		# tldr shows usage examples of a command, similar to man
+		sudo apt install -y tldr
+		# xclip allows easy commandline access to the clipboard
+		sudo apt install -y xclip
 		# ripgrep is a line-oriented search tool that recursively searches your current directory for a regex pattern.
 		sudo apt install -y ripgrep
 		# bat is a cat clone with added syntax highlighting
 		sudo apt install -y bat
 		# wordnet is a commandline thesaurus and dictionary
 		sudo apt install -y wordnet
-		# tldr shows usage examples of a command, similar to man
-		sudo apt install -y tldr
+		# terminator is a terminal emulator which supports split layouts
+		sudo apt install -y terminator
+		# tree is a recursive directory listing program that produces a depth indented listing of files. 
+		sudo apt install -y tree  
 		# fuck attempts to autocorrect the spelling of your last entered command
 		sudo apt install -y thefuck
 		# show fortunes
 		sudo apt install -y fortune-mod
 		# make the cow say things
 		sudo apt install -y cowsay
-		# MultiTail allows you to monitor logfiles and command output in multiple windows.
+		# multitail allows you to monitor logfiles and command output in multiple windows.
 		sudo apt install -y multitail 
-	
+
+		# xcape is to allow for mapping a key tap vs a key hold
+		# used by xmodmap configuration
+		sudo apt install -y xcape
 		
 	elif [ $dtype == "redhat" ]; then
 		echo "please add redhat support and make a pull request"

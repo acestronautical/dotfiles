@@ -63,14 +63,22 @@ elif [ -f /etc/bash_completion ]; then
 	. /etc/bash_completion
 fi
 
-# Support for fuck command
+# aliases for thefuck
 if type thefuck &> /dev/null; then
 	eval "$(thefuck --alias)"
 fi
 
-# Replace cat with bat
+# alias cat with bat
 if type bat &> /dev/null; then
 	alias cat='bat'
+fi
+
+# alias xclip to systemwide clipboard
+if type xclip &> /dev/null; then
+	# copy to clipboard. ex: cat file1 | toclip
+	alias toclip='xclip -selection clipboard' 
+	# paste from clipboard. ex: fromclip > file1, echo | fromclip
+	alias fromclip='xclip -o -selection clipboard'
 fi
 
 # Cow says things
@@ -109,7 +117,7 @@ LIGHTCYAN="\033[1;36m"
 OCHRE="\033[38;5;95m"
 NOCOLOR="\033[0m"
 
-# Color for manpages in less makes manpages a little easier to read
+# Color for manpages in less makes manpages easier to read
 export LESS_TERMCAP_mb=$'\E[01;31m'
 export LESS_TERMCAP_md=$'\E[01;31m'
 export LESS_TERMCAP_me=$'\E[0m'
