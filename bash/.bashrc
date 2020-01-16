@@ -21,6 +21,7 @@ HISTCONTROL=ignoreboth
 # append to the history file, don't overwrite it
 shopt -s histappend
 
+# make the history size larger
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 HISTSIZE=1000
 HISTFILESIZE=2000
@@ -50,7 +51,6 @@ if [[ $iatest > 0 ]]; then bind "set completion-ignore-case on"; fi
 # Show auto-completion list automatically, without double tab
 if [[ $iatest > 0 ]]; then bind "set show-all-if-ambiguous On"; fi
 
-
 # Source alias definitions.
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
@@ -63,17 +63,12 @@ elif [ -f /etc/bash_completion ]; then
 	. /etc/bash_completion
 fi
 
-# aliases for thefuck
-if type thefuck &> /dev/null; then
-	eval "$(thefuck --alias)"
-fi
-
-# alias cat with bat
+# alias cat with bat if installed
 if type bat &> /dev/null; then
 	alias cat='bat'
 fi
 
-# alias xclip to systemwide clipboard
+# alias xclip to systemwide clipboard if installed
 if type xclip &> /dev/null; then
 	# copy to clipboard. ex: cat file1 | toclip
 	alias toclip='xclip -selection clipboard' 
@@ -81,14 +76,14 @@ if type xclip &> /dev/null; then
 	alias fromclip='xclip -o -selection clipboard'
 fi
 
-# Cow says things
+# cow says things if cowsay and fortune installed
 if type fortune &> /dev/null; then
 	if type cowsay &> /dev/null; then
 		fortune | cowsay
 	fi
 fi
 
-# fzf keybindings
+# fzf keybindings if installed
 if type fzf &> /dev/null; then
 . /usr/share/doc/fzf/examples/key-bindings.bash
 fi

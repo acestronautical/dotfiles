@@ -80,7 +80,8 @@ cd ()
 }
 
 # Extract any archive(s) 
-extract () {
+extract () 
+{
 	for archive in $*; do
 		if [ -f $archive ] ; then
 			case $archive in
@@ -144,18 +145,15 @@ install_bashrc_commands ()
 		sudo apt install -y bat
 		# wordnet is a commandline thesaurus and dictionary
 		sudo apt install -y wordnet
-		# terminator is a terminal emulator which supports split layouts
-		sudo apt install -y terminator
 		# tree is a recursive directory listing program that produces a depth indented listing of files. 
 		sudo apt install -y tree  
-		# fuck attempts to autocorrect the spelling of your last entered command
-		sudo apt install -y thefuck
+		# multitail allows you to monitor logfiles and command output in multiple windows.
+		sudo apt install -y multitail 
+
 		# show fortunes
 		sudo apt install -y fortune-mod
 		# make the cow say things
 		sudo apt install -y cowsay
-		# multitail allows you to monitor logfiles and command output in multiple windows.
-		sudo apt install -y multitail 
 
 		# xcape is to allow for mapping a key tap vs a key hold
 		# used by xmodmap configuration
