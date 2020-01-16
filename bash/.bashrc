@@ -63,31 +63,6 @@ elif [ -f /etc/bash_completion ]; then
 	. /etc/bash_completion
 fi
 
-# alias cat with bat if installed
-if type bat &> /dev/null; then
-	alias cat='bat'
-fi
-
-# alias xclip to systemwide clipboard if installed
-if type xclip &> /dev/null; then
-	# copy to clipboard. ex: cat file1 | toclip
-	alias toclip='xclip -selection clipboard' 
-	# paste from clipboard. ex: fromclip > file1, echo | fromclip
-	alias fromclip='xclip -o -selection clipboard'
-fi
-
-# cow says things if cowsay and fortune installed
-if type fortune &> /dev/null; then
-	if type cowsay &> /dev/null; then
-		fortune | cowsay
-	fi
-fi
-
-# fzf keybindings if installed
-if type fzf &> /dev/null; then
-. /usr/share/doc/fzf/examples/key-bindings.bash
-fi
-
 #######################################################
 # COLORS AND PROMPT
 #######################################################

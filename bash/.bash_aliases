@@ -66,12 +66,55 @@ alias ungz='tar -xvzf'
 alias logs="sudo find /var/log -type f -exec file {} \; | grep 'text' | cut -d' ' -f1 | sed -e's/:$//g' | grep -v '[0-9]$' | xargs tail -f"
 
 #######################################################
+# APPLICATION DEPENDENT ALIASES & BINDINGS
+#######################################################
+
+# alias cat with bat if installed
+if type bat &> /dev/null; then
+	alias cat='bat'
+fi
+
+# alias xclip to systemwide clipboard if installed
+if type xclip &> /dev/null; then
+	# copy to clipboard. ex: cat file1 | toclip
+	alias toclip='xclip -selection clipboard' 
+	# paste from clipboard. ex: fromclip > file1, echo | fromclip
+	alias fromclip='xclip -o -selection clipboard'
+fi
+
+# cow says things if cowsay and fortune installed
+if type fortune &> /dev/null; then
+	if type cowsay &> /dev/null; then
+		fortune | cowsay
+	fi
+fi
+
+# fzf keybindings if installed
+if type fzf &> /dev/null; then
+. /usr/share/doc/fzf/examples/key-bindings.bash
+fi
+
+# wordnet aliases (terminal dictionary)
+if type wc &> /dev/null; then
+	# lookup a words definition
+	definition() {
+    #do things with parameters like $1 such as
+    wn $1 -over
+	}
+	# lookup a words synonyms
+	synonyms() {
+    #do things with parameters like $1 such as
+    wn $1 -synsn -synsv -synsa -synsr
+	}
+fi
+
+
+#######################################################
 # FUNCTIONS
 #######################################################
 
 #Automatically do an ls after each cd
-cd ()
-{
+cd () {
  	if [ -n "$1" ]; then
  		builtin cd "$@" && ls
  	else
@@ -80,8 +123,7 @@ cd ()
 }
 
 # Extract any archive(s) 
-extract () 
-{
+extract () {
 	for archive in $*; do
 		if [ -f $archive ] ; then
 			case $archive in
@@ -105,8 +147,7 @@ extract ()
 }
 
 # Detect the current linux distribution variant
-distribution ()
-{
+distribution () {
 	local dtype
 	# Assume unknown
 	dtype="unknown"
@@ -126,8 +167,7 @@ distribution ()
 }
 
 # Install recommended commands for this .bashrc file
-install_bashrc_commands ()
-{
+install_bashrc_commands () {
 	local dtype
 	dtype=$(distribution)
 
