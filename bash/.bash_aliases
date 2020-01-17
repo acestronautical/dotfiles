@@ -96,16 +96,12 @@ fi
 
 # wordnet aliases (terminal dictionary)
 if type wc &> /dev/null; then
-	# lookup a words definition
-	definition() {
-    #do things with parameters like $1 such as
-    wn $1 -over
-	}
+	# lookup a words definitions
+	definition() { wn $1 -over }
 	# lookup a words synonyms
-	synonyms() {
-    #do things with parameters like $1 such as
-    wn $1 -synsn -synsv -synsa -synsr
-	}
+	synonym() { wn $1 -synsn -synsv -synsa -synsr }
+	# lookup a words antonyms
+	antonym() { wn $1 -antsn -antsv -antsa -antsr }
 fi
 
 
