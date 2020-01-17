@@ -4,6 +4,8 @@ A sensible and minimal set of configurations optimized for debian/ubuntu
 
 ![screenshot](screenshot.png)
 
+Star if you find these files useful, fork if you would like to make these dotfiles your own :-)
+
 ## Installation
 
 ```bash
@@ -21,9 +23,9 @@ More generally ```stow <folder>``` creates symlinks for everything inside the sp
 
 ## Why isn't it working
 
-Make sure you have installed GNU stow ```sudo apt install stow```
+Make sure you have installed GNU stow with ```sudo apt install stow```
 
-this repo must be cloned to ~ for stow to function as shown, if you wish to clone elsewhere use ```stow --target=~ <configuration>```
+this repo must be cloned to ~ for stow to function as shown in the above example. if you wish to clone elsewhere use ```stow --target=~ <configuration>``` from within the cloned ``dotfiles`` directory.
 
 If a file already exists (such as ```.bashrc```) then stow will fail with a conflict warning. This is the desired behavior so that existing configuration is not lost. If you wish to overwrite an existing configuration you must manually delete the existing files (or rename them as eg ```.bashrc.bak```) and rerun stow.
 
