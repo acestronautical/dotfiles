@@ -4,40 +4,45 @@ A sensible and minimal set of configurations optimized for debian/ubuntu
 
 ![screenshot](screenshot.png)
 
-## Install
+## Installation
 
-```
+```bash
 cd ~
 git clone https://github.com/Ace-Cassidy/dotfiles.git
+cd dotfiles
 stow <configuration>
 ```
 
-To install a configuration simply execute ```stow <folder>``` from within the dotfiles directory. 
+To install a configuration simply execute ```stow <configuration>``` from within the dotfiles directory.
 
-For example ```stow bash``` will create symlinks in ~ for .bashrc and .bash_aliases
+For example ```stow bash``` will create symlinks in ```~``` for ```.bashrc``` and ```.bash_aliases```
 
-## Why isn't it working?
+More generally ```stow <folder>``` creates symlinks for everything inside the specified folder, into the parent directory of your current working directory.
+
+## Why isn't it working
 
 Make sure you have installed GNU stow ```sudo apt install stow```
 
 this repo must be cloned to ~ for stow to function as shown, if you wish to clone elsewhere use ```stow --target=~ <configuration>```
 
-If a file already exists (such as .bashrc) then stow will fail with a conflict warning, this is the desired behavior so that existing configuration is not lost. If you wish to overwrite an existing configuration you must manually delete the existing file(s) and rerun stow.
+If a file already exists (such as ```.bashrc```) then stow will fail with a conflict warning. This is the desired behavior so that existing configuration is not lost. If you wish to overwrite an existing configuration you must manually delete the existing files (or rename them as eg ```.bashrc.bak```) and rerun stow.
 
-## bash
+## Configurations
 
-Some parts of the .bashrc configuration (such as cowsay/fortune) require running ```install_bashrc_commands``` in order to function, to view/edit which commands will be installed scroll to the end of .bash_aliases.
+### bash
 
-## git
+Some parts of the .bashrc configuration (such as cowsay/fortune) require running ```install_bashrc_commands``` in order to function. To view/edit which commands will be installed examine the bottom of ```.bash_aliases```
 
-Make sure to change name and email to your own name and email!!!
+### git
 
-## vscode
+Make sure to change the name and email to your own name and email!!!
+
+### vscode
 
 vscode files are located in ```~/.config/Code/User```. You will need to delete your existing vscode files before stow will work. Alternatively you may manually copy and paste the lines you would like.
 
-## xmodmap
+### xmodmap
 
-xmodmap will overload capslock to function as escape when pressed, and when held will provide arrow keys on the right hand home row. To change from inverted-T to vim style arrows edit the .xmodmap file. 
+xmodmap will overload capslock to function as escape when pressed, and when held will provide arrow keys on the right hand home row. To change from inverted-T to vim style arrows edit the .xmodmap file.
 
-Note: you will need to ```chmod +x .xmodmap.sh``` then install the dependency xcape ```sudo apt install xcape```
+Note: you will need to make the script executable using ```chmod +x .xmodmap.sh```, and then install the dependency xcape with ```sudo apt install xcape```
