@@ -97,11 +97,17 @@ fi
 # wordnet aliases (terminal dictionary)
 if type wc &> /dev/null; then
 	# lookup a words definitions
-	definition() { wn $1 -over }
+	definition() { 
+		wn $1 -over 
+	}
 	# lookup a words synonyms
-	synonym() { wn $1 -synsn -synsv -synsa -synsr }
+	synonym() { 
+		wn $1 -synsn -synsv -synsa -synsr 
+	}
 	# lookup a words antonyms
-	antonym() { wn $1 -antsn -antsv -antsa -antsr }
+	antonym() { 
+		wn $1 -antsn -antsv -antsa -antsr 
+	}
 fi
 
 
@@ -170,30 +176,30 @@ install_bashrc_commands () {
 	if [ $dtype == "debian" ]; then
 
 		# fzf is a general-purpose command-line fuzzy finder.
-		sudo apt install -y fzf
+		sudo apt-get install -y fzf
 		# tldr shows usage examples of a command, similar to man
-		sudo apt install -y tldr
+		sudo apt-get install -y tldr
 		# xclip allows easy commandline access to the clipboard
-		sudo apt install -y xclip
+		sudo apt-get install -y xclip
 		# ripgrep is a line-oriented search tool that recursively searches your current directory for a regex pattern.
-		sudo apt install -y ripgrep
+		sudo apt-get install -y ripgrep
 		# bat is a cat clone with added syntax highlighting
-		sudo apt install -y bat
+		sudo apt-get install -y bat
 		# wordnet is a commandline thesaurus and dictionary
-		sudo apt install -y wordnet
+		sudo apt-get install -y wordnet
 		# tree is a recursive directory listing program that produces a depth indented listing of files. 
-		sudo apt install -y tree  
+		sudo apt-get install -y tree  
 		# multitail allows you to monitor logfiles and command output in multiple windows.
-		sudo apt install -y multitail 
+		sudo apt-get install -y multitail 
 
 		# show fortunes
-		sudo apt install -y fortune-mod
+		sudo apt-get install -y fortune-mod
 		# make the cow say things
-		sudo apt install -y cowsay
+		sudo apt-get install -y cowsay
 
 		# xcape is to allow for mapping a key tap vs a key hold
 		# used by xmodmap configuration
-		sudo apt install -y xcape
+		sudo apt-get install -y xcape
 		
 	elif [ $dtype == "redhat" ]; then
 		echo "please add redhat support and make a pull request"
