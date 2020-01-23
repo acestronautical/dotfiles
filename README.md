@@ -39,6 +39,10 @@ Some parts of the .bashrc configuration (such as cowsay/fortune) require running
 
 Make sure to change the name and email to your own name and email!!!
 
+### gnome-extensions
+
+Due to the limitations of gnome extensions this configuration cannot be installed with stow, instead please ```chmod +x install.sh && ./install.sh```
+
 ### vscode
 
 vscode files are located in ```~/.config/Code/User```. You will need to delete your existing vscode files before stow will work. Alternatively you may manually copy and paste the lines you would like.

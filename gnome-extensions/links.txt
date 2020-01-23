@@ -1,0 +1,2 @@
+https://extensions.gnome.org/extension/1236/noannoyance/
+https://extensions.gnome.org/extension/779/clipboard-indicator/
