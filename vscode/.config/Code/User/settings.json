@@ -1,37 +1,27 @@
 {
-    // Visual guide for line limit
+    "C_Cpp.clang_format_fallbackStyle": "llvm", //  use compact formatting
+    "C_Cpp.updateChannel": "Insiders", // get cpp beta features
+    "editor.autoClosingBrackets": "never", // don't complete brackets 
+    "editor.autoClosingQuotes": "never", // don't complete quotes
+    "editor.autoIndent": "full", // try to fix indentation during copy paste
+    "editor.cursorBlinking": "solid", // don't blink
+    "editor.minimap.enabled": false, // turn off code map
+    "editor.renderWhitespace": "selection", // show whitespace when highlighting
     "editor.rulers": [
         80
-    ],
-    // Don't complete brackets or quotes
-    "editor.autoClosingBrackets": "never",
-    "editor.autoClosingQuotes": "never",
-    // Turn off code map
-    "editor.minimap.enabled": false,
-    // Wrap long lines
-    "editor.wordWrap": "on",
-    // Don't blink
-    "editor.cursorBlinking": "solid",
-    // Show whitespace when highlighting
-    "editor.renderWhitespace": "selection",
-    // Try to fix indentation during copy paste
-    "editor.autoIndent": true,
-    // Save space on linux
-    "window.titleBarStyle": "custom",
-    // Fix missing underscores
-    "terminal.integrated.fontSize": 13,
-    // Don't ask when I delete or move files
-    "explorer.confirmDelete": false,
-    "explorer.confirmDragAndDrop": false,
-    // git commit all and fetch automatically
-    "git.enableSmartCommit": true,
-    "git.autofetch": true,
-    // Don't overwrite tabs
-    "workbench.editor.enablePreview": false,
-    // Disable telemetry
-    "telemetry.enableTelemetry": false,
-    "telemetry.enableCrashReporter": false,
+    ], // visual guide for line limit
+    "editor.wordWrap": "on", // wrap long lines
+    "explorer.confirmDelete": false, // don't ask when i delete files
+    "explorer.confirmDragAndDrop": false, // don't ask when i move files
+    "git.autofetch": true, // periodically run git fetch
+    "git.enableSmartCommit": true, // git commit all changes automatically
+    "liveshare.joinDebugSessionOption": "Prompt",
+    "liveshare.showVerboseNotifications": false,
+    "telemetry.enableCrashReporter": false, // disable crash reporting
+    "telemetry.enableTelemetry": false, // disable telemetry
+    "terminal.integrated.fontSize": 13, // fix missing underscores
     "terminal.integrated.rendererType": "dom",
-    "C_Cpp.clang_format_fallbackStyle": "LLVM",
-    "C_Cpp.updateChannel": "Insiders",
+    "window.openFilesInNewWindow": "on",
+    "window.titleBarStyle": "custom", // save space on linux
+    "workbench.editor.enablePreview": false, // keep all taps open
 }
