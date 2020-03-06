@@ -60,9 +60,13 @@ if type bat &> /dev/null; then
 	alias cat='bat'
 fi
 
-# alias exract with unp if installed
+# alias extract with unp if installed
 if type unp &> /dev/null; then
 	alias extract='unp'
+fi
+# change pager to most if installed for better color in manpages
+if type most &> /dev/null; then
+	export PAGER="/usr/bin/most -s"
 fi
 
 # alias xclip to systemwide clipboard if installed
@@ -158,6 +162,8 @@ install_bashrc_commands () {
 		sudo apt-get install -y tree  
 		# multitail allows you to monitor logfiles and command output in multiple windows.
 		sudo apt-get install -y multitail 
+		# Most provides color for manpages 
+		sudo apt-get install -y most
 		# vim is an advanced terminal editor
 		sudo apt-get install -y vim
 		# baobab is a disk usage visualizer
@@ -205,15 +211,6 @@ CYAN="\033[0;36m"
 LIGHTCYAN="\033[1;36m"
 OCHRE="\033[38;5;95m"
 NOCOLOR="\033[0m"
-
-# Color for manpages in less makes manpages easier to read
-export LESS_TERMCAP_mb=$'\E[01;31m'
-export LESS_TERMCAP_md=$'\E[01;31m'
-export LESS_TERMCAP_me=$'\E[0m'
-export LESS_TERMCAP_se=$'\E[0m'
-export LESS_TERMCAP_so=$'\E[01;44;33m'
-export LESS_TERMCAP_ue=$'\E[0m'
-export LESS_TERMCAP_us=$'\E[01;32m'
 
 # To have colors for ls and all grep commands such as grep, egrep and zgrep
 export CLICOLOR=1
