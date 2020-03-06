@@ -191,6 +191,10 @@ install_bashrc_commands () {
 		sudo apt-get install -y tree  
 		# multitail allows you to monitor logfiles and command output in multiple windows.
 		sudo apt-get install -y multitail 
+		# vim is an advanced terminal editor
+		sudo apt-get install -y vim
+		# baobab is a disk usage visualizer
+		sudo apt-get install -y baobab
 
 		# show fortunes
 		sudo apt-get install -y fortune-mod

@@ -39,9 +39,9 @@ Some parts of the .bashrc configuration (such as cowsay/fortune) require running
 
 Make sure to change the name and email to your own name and email!!!
 
-### gnome-extensions
+### vim
 
-Due to the limitations of gnome extensions this configuration cannot be installed with stow, instead please ```chmod +x install.sh && ./install.sh```
+Adds a minimal ```.vimrc``` and includes the solarized color scheme ```.vim/colors/solarized.vim```
 
 ### vscode
 
@@ -51,4 +51,4 @@ vscode files are located in ```~/.config/Code/User```. You will need to delete y
 
 xmodmap will overload capslock to function as escape when pressed, and when held will provide arrow keys on the right hand home row. To change from inverted-T to vim style arrows edit the .xmodmap file.
 
-Note: you will need to make the script executable using ```chmod +x .xmodmap.sh```, and then install the dependency xcape with ```sudo apt install xcape```
+Note: you will need to make the script executable using ```chmod +x .xmodmap.sh```, and then install the dependency xcape with ```sudo apt install xcape``` before running stow
