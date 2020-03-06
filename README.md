@@ -45,7 +45,7 @@ Adds a minimal ```.vimrc``` and includes the solarized color scheme ```.vim/colo
 
 ### vscode
 
-vscode files are located in ```~/.config/Code/User```. You will need to delete your existing vscode files before stow will work. Alternatively you may manually copy and paste the lines you would like.
+vscode files are located in ```~/.config/Code/User```. You will need to delete your existing vscode settings.json before stow will work. Alternatively you may manually copy and paste the lines you would like. It is recommended to have run vscode at least once before the stow so that the whole path is not symlinked.
 
 ### xmodmap
 
