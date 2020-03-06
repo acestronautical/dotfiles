@@ -43,24 +43,6 @@ alias mkdir='mkdir -p -v'
 # cd typo alias
 alias cd..='cd ..'
 
-# alias chmod commands
-alias mx='chmod a+x'
-alias 000='chmod -R 000'
-alias 644='chmod -R 644'
-alias 666='chmod -R 666'
-alias 755='chmod -R 755'
-alias 777='chmod -R 777'
-
-# Compress files
-alias mktar='tar -cvf'
-alias mkbz2='tar -cvjf'
-alias mkgz='tar -cvzf'
-
-# Decompress files
-alias untar='tar -xvf'
-alias unbz2='tar -xvjf'
-alias ungz='tar -xvzf'
-
 # Show all logs in /var/log
 alias logs="sudo find /var/log -type f -exec file {} \; | grep 'text' | cut -d' ' -f1 | sed -e's/:$//g' | grep -v '[0-9]$' | xargs tail -f"
 
@@ -76,6 +58,11 @@ fi
 # alias cat with bat if installed
 if type bat &> /dev/null; then
 	alias cat='bat'
+fi
+
+# alias exract with unp if installed
+if type unp &> /dev/null; then
+	alias extract='unp'
 fi
 
 # alias xclip to systemwide clipboard if installed
@@ -128,30 +115,6 @@ cd () {
  	fi
 }
 
-# Extract any archive(s) 
-extract () {
-	for archive in $*; do
-		if [ -f $archive ] ; then
-			case $archive in
-				*.tar.bz2)   tar xvjf $archive    ;;
-				*.tar.gz)    tar xvzf $archive    ;;
-				*.bz2)       bunzip2 $archive     ;;
-				*.rar)       rar x $archive       ;;
-				*.gz)        gunzip $archive      ;;
-				*.tar)       tar xvf $archive     ;;
-				*.tbz2)      tar xvjf $archive    ;;
-				*.tgz)       tar xvzf $archive    ;;
-				*.zip)       unzip $archive       ;;
-				*.Z)         uncompress $archive  ;;
-				*.7z)        7z x $archive        ;;
-				*)           echo "don't know how to extract '$archive'..." ;;
-			esac
-		else
-			echo "'$archive' is not a valid file!"
-		fi
-	done
-}
-
 # Detect the current linux distribution variant
 distribution () {
 	local dtype
@@ -199,14 +162,13 @@ install_bashrc_commands () {
 		sudo apt-get install -y vim
 		# baobab is a disk usage visualizer
 		sudo apt-get install -y baobab
-
+		# unp is a utility for unpacking archives of all kinds
+		sudo apt-get install unp
 		# show fortunes
 		sudo apt-get install -y fortune-mod
 		# make the cow say things
 		sudo apt-get install -y cowsay
-
-		# xcape is to allow for mapping a key tap vs a key hold
-		# used by xmodmap configuration
+		# xcape allows for mapping a key tap vs a key hold
 		sudo apt-get install -y xcape
 		
 	elif [ $dtype == "redhat" ]; then
