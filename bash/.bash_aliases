@@ -103,13 +103,22 @@ fi
 # FUNCTIONS
 #######################################################
 
-#Automatically do an ls after each cd
+# Automatically do an ls after each cd
 cd () {
  	if [ -n "$1" ]; then
  		builtin cd "$@" && ls
  	else
  		builtin cd ~ && ls
  	fi
+}
+
+# Make a directory and immediately cd into it
+mkcd() {
+        if [ $# != 1 ]; then
+                echo "Usage: mkcd <dir>"
+        else
+                mkdir -p $1 && cd $1
+        fi
 }
 
 # Detect the current linux distribution variant
