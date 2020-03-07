@@ -17,7 +17,7 @@ stow <configuration>
 
 To install a configuration simply execute ```stow <configuration>``` from within the dotfiles directory.
 
-For example ```stow bash``` will create symlinks in ```~``` for ```.bashrc``` and ```.bash_aliases```
+For example ```stow bash``` will create symlinks in ```~``` for ```.bash_aliases``` and ```.bash_profile```
 
 More generally ```stow <folder>``` creates symlinks for everything inside the specified folder, into the parent directory of your current working directory.
 
@@ -27,7 +27,7 @@ Make sure you have installed GNU stow with ```sudo apt install stow```
 
 this repo must be cloned to ~ for stow to function as shown in the above example. if you wish to clone elsewhere use ```stow --target=~ <configuration>``` from within the cloned ``dotfiles`` directory.
 
-If a file already exists (such as ```.bashrc```) then stow will fail with a conflict warning. This is the desired behavior so that existing configuration is not lost. If you wish to overwrite an existing configuration you must manually delete the existing files (or rename them as eg ```.bashrc.bak```) and rerun stow.
+If a file already exists (such as ```.bash_aliases```) then stow will fail with a conflict warning. This is the desired behavior so that existing configuration is not lost. If you wish to overwrite an existing configuration you must manually delete the existing files (or rename them as eg ```.bash_aliases.bak```) and rerun stow.
 
 ## Configurations
 
