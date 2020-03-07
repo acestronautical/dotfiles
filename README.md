@@ -51,4 +51,4 @@ vscode files are located in ```~/.config/Code/User```. You will need to delete y
 
 xmodmap will overload capslock to function as escape when pressed, and when held will provide arrow keys on the right hand home row. To change from inverted-T to vim style arrows edit the .xmodmap file.
 
-Note: you will need to make the script executable using ```chmod +x .xmodmap.sh```, and then install the dependency xcape with ```sudo apt install xcape``` before running stow
+Note: you will need to make the script executable using ```chmod +x .xmodmap.sh```, and then install the dependency xcape with ```sudo apt install xcape``` before running stow. You will need to log out or restart before the keybindings take effect
