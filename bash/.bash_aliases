@@ -1,10 +1,6 @@
 #!/bin/bash
 
 #######################################################
-# PATH
-#######################################################
-
-#######################################################
 # GENERAL
 #######################################################
 
@@ -63,10 +59,6 @@ fi
 # alias extract with unp if installed
 if type unp &> /dev/null; then
 	alias extract='unp'
-fi
-# change pager to most if installed for better color in manpages
-if type most &> /dev/null; then
-	export PAGER="/usr/bin/most -s"
 fi
 
 # alias xclip to systemwide clipboard if installed
@@ -162,8 +154,6 @@ install_bashrc_commands () {
 		sudo apt-get install -y tree  
 		# multitail allows you to monitor logfiles and command output in multiple windows.
 		sudo apt-get install -y multitail 
-		# Most provides color for manpages 
-		sudo apt-get install -y most
 		# vim is an advanced terminal editor
 		sudo apt-get install -y vim
 		# baobab is a disk usage visualizer
