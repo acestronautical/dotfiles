@@ -40,7 +40,8 @@ alias mkdir='mkdir -p -v'
 alias cd..='cd ..'
 
 # Show all logs in /var/log
-alias logs="sudo find /var/log -type f -exec file {} \; | grep 'text' | cut -d' ' -f1 | sed -e's/:$//g' | grep -v '[0-9]$' | xargs tail -f"
+alias logs="sudo find /var/log -type f -exec file {} \; | grep 'text' | cut -d'`
+ `' -f1 | sed -e's/:$//g' | grep -v '[0-9]$' | xargs tail -f"
 
 #######################################################
 # APPLICATION DEPENDENT ALIASES & BINDINGS
@@ -120,12 +121,14 @@ distribution () {
 	# First test against Fedora / RHEL / CentOS / generic Redhat derivative
 	if [ -r /etc/rc.d/init.d/functions ]; then
 		source /etc/rc.d/init.d/functions
-		[ zz`type -t passed 2>/dev/null` == "zzfunction" ] && dtype="redhat"
+		[ zz`type -t passed 2>/dev/null` == "zzfunction" ]\
+		&& dtype="redhat"
 	
 	# Then test against Debian, Ubuntu and friends
 	elif [ -r /lib/lsb/init-functions ]; then
 		source /lib/lsb/init-functions
-		[ zz`type -t log_begin_msg 2>/dev/null` == "zzfunction" ] && dtype="debian"
+		[ zz`type -t log_begin_msg 2>/dev/null` == "zzfunction" ]\
+		&& dtype="debian"
 
 	fi
 	echo $dtype
@@ -144,15 +147,15 @@ install_bashrc_commands () {
 		sudo apt-get install -y tldr
 		# xclip allows easy commandline access to the clipboard
 		sudo apt-get install -y xclip
-		# ripgrep is a line-oriented search tool that recursively searches your current directory for a regex pattern.
+		# ripgrep recursively searches your current directory for with a regex.
 		sudo apt-get install -y ripgrep
 		# bat is a cat clone with added syntax highlighting
 		sudo apt-get install -y bat
 		# wordnet is a commandline thesaurus and dictionary
 		sudo apt-get install -y wordnet
-		# tree is a recursive directory listing program that produces a depth indented listing of files. 
+		# tree is a directory listing producing depth indented list of files. 
 		sudo apt-get install -y tree  
-		# multitail allows you to monitor logfiles and command output in multiple windows.
+		# multitail monitors logfiles and command output in multiple windows.
 		sudo apt-get install -y multitail 
 		# vim is an advanced terminal editor
 		sudo apt-get install -y vim
@@ -219,8 +222,8 @@ function __setprompt
 
 	# Show error exit code if there is one
 	if [[ $LAST_COMMAND != 0 ]]; then
-		# PS1="\[${RED}\](\[${LIGHTRED}\]ERROR\[${RED}\])-(\[${LIGHTRED}\]Exit Code \[${WHITE}\]${LAST_COMMAND}\[${RED}\])-(\[${LIGHTRED}\]"
-		PS1="\[${DARKGRAY}\](\[${LIGHTRED}\]ERROR\[${DARKGRAY}\])-(\[${RED}\]Exit Code \[${LIGHTRED}\]${LAST_COMMAND}\[${DARKGRAY}\])-(\[${RED}\]"
+		PS1="\[${DARKGRAY}\](\[${LIGHTRED}\]ERROR\[${DARKGRAY}\])-(\[${RED}\]"`
+		`"Exit Code \[${LIGHTRED}\]${LAST_COMMAND}\[${DARKGRAY}\])-(\[${RED}\]"
 		if [[ $LAST_COMMAND == 1 ]]; then
 			PS1+="General error"
 		elif [ $LAST_COMMAND == 2 ]; then
