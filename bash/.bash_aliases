@@ -6,6 +6,7 @@
 
 # This is where you put your hand rolled scripts (remember to chmod them)
 PATH="$HOME/bin:$PATH"
+# PATH="$HOME/repos/llvm-project/build/bin:$PATH"
 
 #######################################################
 # GENERAL
@@ -63,11 +64,6 @@ if type vim &> /dev/null; then
 	alias vi='vim'
 fi
 
-# alias cat with bat if installed
-if type bat &> /dev/null; then
-	alias cat='bat'
-fi
-
 # alias extract with unp if installed
 if type unp &> /dev/null; then
 	alias extract='unp'
@@ -77,11 +73,11 @@ fi
 if type xclip &> /dev/null; then
 	# copy to clipboard. ex: cat file1 | toclip
 	alias toclip='xclip -selection clipboard' 
-	# paste from clipboard. ex: fromclip > file1, echo | fromclip
+	# paste from clipboard. ex: fromclip > file1 OR fromclip | cat
 	alias fromclip='xclip -o -selection clipboard'
 fi
 
-# cow says things if cowsay and fortune installed
+# the cow says things if cowsay and fortune are installed
 if type fortune &> /dev/null; then
 	if type cowsay &> /dev/null; then
 		fortune | cowsay
@@ -90,20 +86,23 @@ fi
 
 # fzf keybindings if installed
 if type fzf &> /dev/null; then
-. /usr/share/doc/fzf/examples/key-bindings.bash
+	# CTRL-T - Paste the selected files and directories onto the command-line
+	# CTRL-R - Paste the selected command from history onto the command-line
+	# ALT-C - cd into the selected directory
+	. /usr/share/doc/fzf/examples/key-bindings.bash
 fi
 
 # wordnet aliases (terminal dictionary)
 if type wc &> /dev/null; then
-	# lookup a words definitions
+	# lookup a words definitions. ex: definition bash
 	definition() { 
 		wn $1 -over 
 	}
-	# lookup a words synonyms
+	# lookup a words synonyms. ex: synonym bash
 	synonym() { 
 		wn $1 -synsn -synsv -synsa -synsr 
 	}
-	# lookup a words antonyms
+	# lookup a words antonyms. ex: antonym bash
 	antonym() { 
 		wn $1 -antsn -antsv -antsa -antsr 
 	}
@@ -125,43 +124,42 @@ cd () {
 
 # Make a directory and immediately cd into it
 mkcd() {
-        if [ $# != 1 ]; then
-                echo "Usage: mkcd <dir>"
-        else
-                mkdir -p $1 && cd $1
-        fi
+    if [ $# != 1 ]; then
+            echo "Usage: mkcd <dir>"
+    else
+            mkdir -p $1 && cd $1
+    fi
 }
 
 # Install recommended commands for this .bashrc file
 install_bashrc_commands () {
-		# fzf is a general-purpose command-line fuzzy finder.
-		sudo apt-get install -y fzf
-		# tldr shows usage examples of a command, similar to man
-		sudo apt-get install -y tldr
-		# xclip allows easy commandline access to the clipboard
-		sudo apt-get install -y xclip
-		# ripgrep recursively searches your current directory for with a regex.
-		sudo apt-get install -y ripgrep
-		# bat is a cat clone with added syntax highlighting
-		sudo apt-get install -y bat
-		# wordnet is a commandline thesaurus and dictionary
-		sudo apt-get install -y wordnet
-		# tree is a directory listing producing depth indented list of files. 
-		sudo apt-get install -y tree  
-		# multitail monitors logfiles and command output in multiple windows.
-		sudo apt-get install -y multitail 
-		# vim is an advanced terminal editor
-		sudo apt-get install -y vim
-		# baobab is a disk usage visualizer
-		sudo apt-get install -y baobab
-		# unp is a utility for unpacking archives of all kinds
-		sudo apt-get install unp
-		# show fortunes
-		sudo apt-get install -y fortune-mod
-		# make the cow say things
-		sudo apt-get install -y cowsay
-		# xcape allows for mapping a key tap vs a key hold
-		sudo apt-get install -y xcape
+	# baobab is a disk usage visualizer
+	sudo apt-get install -y baobab
+	# cowsay shows a cow saying things
+	sudo apt-get install -y cowsay
+	# fortune-mod shows fortunes/funny sayings
+	sudo apt-get install -y fortune-mod
+	# fzf is a general-purpose command-line fuzzy finder.
+	sudo apt-get install -y fzf
+	# multitail monitors logfiles and command output in multiple windows.
+	sudo apt-get install -y multitail 
+	# ripgrep recursively searches your current directory for with a regex.
+	sudo apt-get install -y ripgrep
+	# tldr shows usage examples of a command, similar to man
+	sudo apt-get install -y tldr
+	# tree is a directory listing producing depth indented list of files. 
+	sudo apt-get install -y tree  
+	# unp is a utility for unpacking archives of all kinds
+	sudo apt-get install -y unp
+	# vim is an advanced terminal editor
+	sudo apt-get install -y vim
+	# wordnet is a commandline thesaurus and dictionary
+	sudo apt-get install -y wordnet
+	# xcape allows for mapping a key tap vs a key hold
+	sudo apt-get install -y xcape
+	# xclip allows easy commandline access to the clipboard
+	sudo apt-get install -y xclip
+	
 	# re-source bashrc
 	. ~/.bashrc
 }
