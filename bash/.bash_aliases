@@ -113,6 +113,14 @@ fi
 # FUNCTIONS
 #######################################################
 
+# Make an ssh key if not exists, and copy ssh key to clipboard
+# needs xclip to copy to system clipboard
+ssh-key-now () {
+	cat /dev/zero | ssh-keygen -t ed25519 -C "made with ssh-key-now" -q -N ""
+	xclip -sel clip < ~/.ssh/id_ed25519.pub
+	echo "ssh-key copied to clipboard"
+}
+
 # Automatically do an ls after each cd
 cd () {
  	if [ -n "$1" ]; then
