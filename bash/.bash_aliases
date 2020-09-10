@@ -5,7 +5,7 @@
 #######################################################
 
 # This is where you put your hand rolled scripts (remember to chmod them)
-PATH="$HOME/bin:$PATH"
+PATH="$HOME/bin:$HOME/.local/bin:$PATH"
 # PATH="$HOME/repos/llvm-project/build/bin:$PATH"
 
 #######################################################
@@ -143,6 +143,8 @@ mkcd() {
 install_bashrc_commands () {
 	# baobab is a disk usage visualizer
 	sudo apt-get install -y baobab
+	# copyq is a clipboard manager
+	sudo apt-get install -y copyq
 	# cowsay shows a cow saying things
 	sudo apt-get install -y cowsay
 	# fortune-mod shows fortunes/funny sayings
