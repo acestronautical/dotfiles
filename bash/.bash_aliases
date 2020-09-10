@@ -5,8 +5,11 @@
 #######################################################
 
 # This is where you put your hand rolled scripts (remember to chmod them)
-PATH="$HOME/bin:$HOME/.local/bin:$PATH"
-# PATH="$HOME/repos/llvm-project/build/bin:$PATH"
+PATH="$HOME/bin:$PATH"
+
+# This is so python/pip commands are available
+PATH="$HOME/.local/bin:$PATH"
+
 
 #######################################################
 # GENERAL
