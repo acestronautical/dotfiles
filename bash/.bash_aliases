@@ -146,7 +146,9 @@ mkcd() {
 install_bashrc_commands () {
 	# baobab is a disk usage visualizer
 	sudo apt-get install -y baobab
-	# copyq is a clipboard manager
+  # caffiene is a tray icon to keep pc from sleeping
+  sudo apt-get install -y caffeine
+  # copyq is a clipboard manager
 	sudo apt-get install -y copyq
 	# cowsay shows a cow saying things
 	sudo apt-get install -y cowsay

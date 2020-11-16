@@ -1,25 +1,43 @@
 {
     "C_Cpp.clang_format_fallbackStyle": "llvm", //  use compact formatting
     "C_Cpp.updateChannel": "Insiders", // get cpp beta features
-    "debug.onTaskErrors": "abort",
-    "editor.autoClosingBrackets": "never", // don't complete brackets 
+    "editor.autoClosingBrackets": "never", // don't complete brackets
     "editor.autoClosingQuotes": "never", // don't complete quotes
     "editor.cursorBlinking": "solid", // don't blink
     "editor.minimap.enabled": false, // turn off code map
-    "editor.renderWhitespace": "selection", // show whitespace when highlighting
+    "editor.renderWhitespace": "boundary", // show leading and trailing ws
+    "editor.renderLineHighlight": "gutter", // highlight line no of current line
     "editor.rulers": [
-        80
-    ], // visual guide for line limit
+        {
+            "column": 80,
+            "color": "#66666611"
+        },
+        {
+            "column": 120,
+            "color": "#66666633"
+        },
+    ], // visual guides for line limit
+    "explorer.compactFolders": false, // Show full subfolder structure icons
+    "files.eol": "\n", // linux style end of line
+    "files.insertFinalNewline": true, // always have a final newline
+    "files.trimFinalNewlines": true, // no extra final newlines
+    "files.trimTrailingWhitespace": true, // no extra whitespace at eof
     "explorer.confirmDelete": false, // don't ask when i delete files
     "explorer.confirmDragAndDrop": false, // don't ask when i move files
     "git.autofetch": true, // periodically run git fetch
     "git.enableSmartCommit": true, // git commit all changes automatically
-    "liveshare.allowGuestDebugControl": true,
-    "markdown-preview-enhanced.usePandocParser": true,
+    "search.exclude": {
+        "**/node_modules": true,
+        "**/bower_components": true,
+        "**/*.code-search": true,
+        "**/venv": true,
+        "**/build": true
+    }, // don't search in non project code folders
     "telemetry.enableCrashReporter": false, // disable crash reporting
     "telemetry.enableTelemetry": false, // disable telemetry
-    "terminal.integrated.fontSize": 13, // fix missing underscores
     "terminal.integrated.rendererType": "dom", // faster terminal render
+    "terminal.integrated.scrollback": 10000, // larger terminal scrollback
+    "terminal.integrated.fontSize": 13, // fix missing underscores in terminal
     "window.openFilesInNewWindow": "on", // don't open random files to project
     "window.titleBarStyle": "custom", // remove extra headerbar on linux
     "workbench.colorTheme": "Material Theme Ocean High Contrast", // use theme
