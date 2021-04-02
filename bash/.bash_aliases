@@ -58,6 +58,9 @@ alias logs="sudo find /var/log -type f -exec file {} \; | grep 'text' | cut -d'`
  # Star Wars
  alias starwars='telnet towel.blinkenlights.nl'
 
+ # rg fzf fuzzy search file contents
+ alias searchpwd = 'rg . | fzf --print0 -e'
+
 #######################################################
 # APPLICATION DEPENDENT ALIASES & BINDINGS
 #######################################################
@@ -75,7 +78,7 @@ fi
 # alias xclip to systemwide clipboard if installed
 if type xclip &> /dev/null; then
 	# copy to clipboard. ex: cat file1 | toclip
-	alias toclip='xclip -selection clipboard' 
+	alias toclip='xclip -selection clipboard'
 	# paste from clipboard. ex: fromclip > file1 OR fromclip | cat
 	alias fromclip='xclip -o -selection clipboard'
 fi
@@ -98,16 +101,16 @@ fi
 # wordnet aliases (terminal dictionary)
 if type wc &> /dev/null; then
 	# lookup a words definitions. ex: definition bash
-	definition() { 
-		wn $1 -over 
+	definition() {
+		wn $1 -over
 	}
 	# lookup a words synonyms. ex: synonym bash
-	synonym() { 
-		wn $1 -synsn -synsv -synsa -synsr 
+	synonym() {
+		wn $1 -synsn -synsv -synsa -synsr
 	}
 	# lookup a words antonyms. ex: antonym bash
-	antonym() { 
-		wn $1 -antsn -antsv -antsa -antsr 
+	antonym() {
+		wn $1 -antsn -antsv -antsa -antsr
 	}
 fi
 
@@ -157,13 +160,13 @@ install_bashrc_commands () {
 	# fzf is a general-purpose command-line fuzzy finder.
 	sudo apt-get install -y fzf
 	# multitail monitors logfiles and command output in multiple windows.
-	sudo apt-get install -y multitail 
+	sudo apt-get install -y multitail
 	# ripgrep recursively searches your current directory for with a regex.
 	sudo apt-get install -y ripgrep
 	# tldr shows usage examples of a command, similar to man
 	sudo apt-get install -y tldr
-	# tree is a directory listing producing depth indented list of files. 
-	sudo apt-get install -y tree  
+	# tree is a directory listing producing depth indented list of files.
+	sudo apt-get install -y tree
 	# unp is a utility for unpacking archives of all kinds
 	sudo apt-get install -y unp
 	# vim is an advanced terminal editor
@@ -174,7 +177,7 @@ install_bashrc_commands () {
 	sudo apt-get install -y xcape
 	# xclip allows easy commandline access to the clipboard
 	sudo apt-get install -y xclip
-	
+
 	# re-source bashrc
 	. ~/.bashrc
 }

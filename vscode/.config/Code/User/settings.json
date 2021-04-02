@@ -17,6 +17,7 @@
             "color": "#66666633"
         },
     ], // visual guides for line limit
+    "editor.scrollBeyondLastLine": false,
     "explorer.compactFolders": false, // Show full subfolder structure icons
     "files.eol": "\n", // linux style end of line
     "files.insertFinalNewline": true, // always have a final newline
@@ -40,7 +41,18 @@
     "terminal.integrated.fontSize": 13, // fix missing underscores in terminal
     "window.openFilesInNewWindow": "on", // don't open random files to project
     "window.titleBarStyle": "custom", // remove extra headerbar on linux
-    "workbench.colorTheme": "Material Theme Ocean High Contrast", // use theme
     "workbench.editor.enablePreview": false, // always open tabs, not previews
-    "workbench.iconTheme": "eq-material-theme-icons-ocean", // use theme icons
+    "vscode-neovim.neovimExecutablePaths.linux": "/home/acec/bin/nvim.appimage",
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "python.linting.pylintUseMinimalCheckers": false,
+    "python.languageServer": "Pylance",
+    "python.linting.enabled": true,
+    "python.linting.pylintEnabled": true,
+    "python.formatting.provider": "black",
+    "python.formatting.blackArgs": [
+        "--line-length=80"
+    ],
+    "go.toolsManagement.autoUpdate": true
 }
