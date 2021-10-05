@@ -51,8 +51,8 @@ alias mkdir='mkdir -p -v'
 alias cd..='cd ..'
 
 # Show all logs in /var/log
-alias logs="sudo find /var/log -type f -exec file {} \; | grep 'text' | cut -d'`
- `' -f1 | sed -e's/:$//g' | grep -v '[0-9]$' | xargs tail -f"
+alias logs="sudo find /var/log -type f -exec file {} \; | grep 'text' | cut -d'$(
+)' -f1 | sed -e's/:$//g' | grep -v '[0-9]$' | xargs tail -f"
 
 # Star Wars
 alias starwars='telnet towel.blinkenlights.nl'
@@ -65,17 +65,17 @@ alias searchpwd='rg . | fzf --print0 -e'
 #######################################################
 
 # alias vi with vim if installed
-if type vim &> /dev/null; then
+if type vim &>/dev/null; then
 	alias vi='vim'
 fi
 
 # alias extract with unp if installed
-if type unp &> /dev/null; then
+if type unp &>/dev/null; then
 	alias extract='unp'
 fi
 
 # alias xclip to systemwide clipboard if installed
-if type xclip &> /dev/null; then
+if type xclip &>/dev/null; then
 	# copy to clipboard. ex: cat file1 | toclip
 	alias toclip='xclip -selection clipboard'
 	# paste from clipboard. ex: fromclip > file1 OR fromclip | cat
@@ -83,14 +83,14 @@ if type xclip &> /dev/null; then
 fi
 
 # the cow says things if cowsay and fortune are installed
-if type fortune &> /dev/null; then
-	if type cowsay &> /dev/null; then
+if type fortune &>/dev/null; then
+	if type cowsay &>/dev/null; then
 		fortune | cowsay
 	fi
 fi
 
 # fzf keybindings if installed
-if type fzf &> /dev/null; then
+if type fzf &>/dev/null; then
 	# CTRL-T - Paste the selected files and directories onto the command-line
 	# CTRL-R - Paste the selected command from history onto the command-line
 	# ALT-C - cd into the selected directory
@@ -98,7 +98,7 @@ if type fzf &> /dev/null; then
 fi
 
 # wordnet aliases (terminal dictionary)
-if type wc &> /dev/null; then
+if type wc &>/dev/null; then
 	# lookup a words definitions. ex: definition bash
 	definition() {
 		wn $1 -over
@@ -113,35 +113,34 @@ if type wc &> /dev/null; then
 	}
 fi
 
-
 #######################################################
 # FUNCTIONS
 #######################################################
 
 # Make an ssh key if not exists, and copy ssh key to clipboard
 # needs xclip to copy to system clipboard
-ssh-key-now () {
+ssh-key-now() {
 	cat /dev/zero | ssh-keygen -t ed25519 -C "made with ssh-key-now" -q -N ""
-	xclip -sel clip < ~/.ssh/id_ed25519.pub
+	xclip -sel clip <~/.ssh/id_ed25519.pub
 	echo "ssh-key copied to clipboard"
 }
 
 # Automatically do an ls after each cd
-cd () {
- 	if [ -n "$1" ]; then
- 		builtin cd "$@" && ls
- 	else
- 		builtin cd ~ && ls
- 	fi
+cd() {
+	if [ -n "$1" ]; then
+		builtin cd "$@" && ls
+	else
+		builtin cd ~ && ls
+	fi
 }
 
 # Install recommended commands for this .bashrc file
-install_bashrc_commands () {
+install_bashrc_commands() {
 	# baobab is a disk usage visualizer
 	sudo apt-get install -y baobab
-  # caffiene is a tray icon to keep pc from sleeping
-  sudo apt-get install -y caffeine
-  # copyq is a clipboard manager
+	# caffiene is a tray icon to keep pc from sleeping
+	sudo apt-get install -y caffeine
+	# copyq is a clipboard manager
 	sudo apt-get install -y copyq
 	# cowsay shows a cow saying things
 	sudo apt-get install -y cowsay
