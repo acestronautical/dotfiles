@@ -1,58 +1,53 @@
 {
     "C_Cpp.clang_format_fallbackStyle": "llvm", //  use compact formatting
     "C_Cpp.updateChannel": "Insiders", // get cpp beta features
+    "diffEditor.ignoreTrimWhitespace": false, // don't ignore git diff ws
     "editor.autoClosingBrackets": "never", // don't complete brackets
     "editor.autoClosingQuotes": "never", // don't complete quotes
-    "editor.cursorBlinking": "solid", // don't blink
+    "editor.bracketPairColorization.enabled": true, // colorize brackets
+    "editor.cursorBlinking": "solid", // don't blink cursor
     "editor.minimap.enabled": false, // turn off code map
-    "editor.renderWhitespace": "boundary", // show leading and trailing ws
     "editor.renderLineHighlight": "gutter", // highlight line no of current line
+    "editor.renderWhitespace": "boundary", // show leading and trailing ws
     "editor.rulers": [
         {
             "column": 80,
-            "color": "#66666611"
+            "color": "#66666622"
         },
         {
             "column": 120,
-            "color": "#66666633"
+            "color": "#66666644"
         },
-    ], // visual guides for line limit
-    "editor.scrollBeyondLastLine": false,
-    "explorer.compactFolders": false, // Show full subfolder structure icons
+    ], // visual guides for line limit at 80 and 120
+    "editor.scrollBeyondLastLine": false, // stop scrolling at the bottom
+    "editor.suggest.preview": true, // better tab autocomplete
+    "explorer.compactFolders": false, // show full subfolder structure icons
+    "explorer.confirmDelete": false, // don't ask when I delete files
+    "explorer.confirmDragAndDrop": false, // don't ask when I move files
     "files.eol": "\n", // linux style end of line
     "files.insertFinalNewline": true, // always have a final newline
     "files.trimFinalNewlines": true, // no extra final newlines
-    "files.trimTrailingWhitespace": true, // no extra whitespace at eof
-    "explorer.confirmDelete": false, // don't ask when i delete files
-    "explorer.confirmDragAndDrop": false, // don't ask when i move files
-    "git.autofetch": true, // periodically run git fetch
-    "git.enableSmartCommit": true, // git commit all changes automatically
+    "python.formatting.blackArgs": [
+        "--line-length=80"
+    ], // limit black to 80 line length
+    "python.formatting.provider": "black", // use black for python formatting
+    "python.languageServer": "Pylance", // use pylance for python linting
     "search.exclude": {
         "**/node_modules": true,
         "**/bower_components": true,
         "**/*.code-search": true,
         "**/venv": true,
-        "**/build": true
+        "**/vendor": true,
+        "**/build": true,
+        "**/migrations": true,
     }, // don't search in non project code folders
     "telemetry.enableCrashReporter": false, // disable crash reporting
     "telemetry.enableTelemetry": false, // disable telemetry
+    "terminal.integrated.fontSize": 13, // fix missing underscores in terminal
     "terminal.integrated.rendererType": "dom", // faster terminal render
     "terminal.integrated.scrollback": 10000, // larger terminal scrollback
-    "terminal.integrated.fontSize": 13, // fix missing underscores in terminal
     "window.openFilesInNewWindow": "on", // don't open random files to project
     "window.titleBarStyle": "custom", // remove extra headerbar on linux
-    "workbench.editor.enablePreview": false, // always open tabs, not previews
-    "vscode-neovim.neovimExecutablePaths.linux": "/home/acec/bin/nvim.appimage",
-    "[json]": {
-        "editor.defaultFormatter": "vscode.json-language-features"
-    },
-    "python.linting.pylintUseMinimalCheckers": false,
-    "python.languageServer": "Pylance",
-    "python.linting.enabled": true,
-    "python.linting.pylintEnabled": true,
-    "python.formatting.provider": "black",
-    "python.formatting.blackArgs": [
-        "--line-length=80"
-    ],
-    "go.toolsManagement.autoUpdate": true
+    "window.zoomLevel": -1, // zoom out a bit
+    "workbench.editor.enablePreview": false // always open tabs, not previews
 }
