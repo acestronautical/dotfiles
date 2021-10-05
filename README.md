@@ -1,4 +1,4 @@
-# Ace Cassidy's Dotfiles
+# Acestronautical's Dotfiles
 
 A sensible and minimal set of configurations optimized for debian/ubuntu
 
