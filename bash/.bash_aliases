@@ -4,12 +4,11 @@
 # PATH
 #######################################################
 
-# This is where you put your hand rolled scripts (remember to chmod them)
-PATH="$HOME/bin:$PATH"
-
 # This is so python/pip commands are available
-PATH="$HOME/.local/bin:$PATH"
+PATH="$PATH:$HOME/.local/bin"
 
+# This is where you put your hand rolled scripts (remember to chmod them)
+PATH="$PATH:$HOME/bin"
 
 #######################################################
 # GENERAL
@@ -22,7 +21,7 @@ iatest=$(expr index "$-" i)
 if [[ $iatest > 0 ]]; then bind "set completion-ignore-case on"; fi
 
 # Show auto-completion list automatically, without double tab
-if [[ $iatest > 0 ]]; then bind "set show-all-if-ambiguous On"; fi
+if [[ $iatest > 0 ]]; then bind "set show-all-if-unmodified On"; fi
 
 #######################################################
 # ALIASES
@@ -134,15 +133,6 @@ cd () {
  	else
  		builtin cd ~ && ls
  	fi
-}
-
-# Make a directory and immediately cd into it
-mkcd() {
-    if [ $# != 1 ]; then
-            echo "Usage: mkcd <dir>"
-    else
-            mkdir -p $1 && cd $1
-    fi
 }
 
 # Install recommended commands for this .bashrc file
