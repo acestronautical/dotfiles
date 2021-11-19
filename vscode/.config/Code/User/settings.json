@@ -27,10 +27,6 @@
     "files.eol": "\n", // linux style end of line
     "files.insertFinalNewline": true, // always have a final newline
     "files.trimFinalNewlines": true, // no extra final newlines
-    "python.formatting.blackArgs": [
-        "--line-length=80"
-    ], // limit black to 80 line length
-    "python.formatting.provider": "black", // use black for python formatting
     "python.languageServer": "Pylance", // use pylance for python linting
     "search.exclude": {
         "**/node_modules": true,
@@ -41,8 +37,7 @@
         "**/build": true,
         "**/migrations": true,
     }, // don't search in non project code folders
-    "telemetry.enableCrashReporter": false, // disable crash reporting
-    "telemetry.enableTelemetry": false, // disable telemetry
+    "telemetry.telemetryLevel": "off", // disable telemetry
     "terminal.integrated.fontSize": 13, // fix missing underscores in terminal
     "terminal.integrated.rendererType": "dom", // faster terminal render
     "terminal.integrated.scrollback": 10000, // larger terminal scrollback

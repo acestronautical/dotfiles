@@ -3,15 +3,17 @@
 	// Extension identifier format: ${publisher}.${name}. Example: vscode.csharp
 	// List of extensions which should be recommended for users of this workspace.
 	"recommendations": [
-		"golang.go",
-		"mechatroner.rainbow-csv",
 		"ms-azuretools.vscode-docker",
-		"ms-mssql.mssql",
+		"ms-vsliveshare.vsliveshare-pack",
 		"ms-python.python",
+		"ms-python.vscode-pylance",
+		"golang.go",
 		"ms-vscode.cpptools",
-		"ms-vscode-remote.remote-ssh",
-		"Tyriar.sort-lines",
-		"wayou.vscode-todo-highlight",
+		"ms-vscode.cpptools-extension-pack",
+		"eg2.vscode-npm-script",
+		"dbaeumer.vscode-eslint",
+		"ms-vscode.cmake-tools",
+		"ms-ossdata.vscode-postgresql",
 	],
 	// List of extensions recommended by VS Code that should not be recommended for users of this workspace.
 	"unwantedRecommendations": []

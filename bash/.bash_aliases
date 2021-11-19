@@ -33,9 +33,6 @@ alias please='sudo $(fc -ln -1)'
 # Open with default application
 alias open='xdg-open'
 
-# Apt is always sudo
-alias apt='sudo apt'
-
 # Support cls
 alias cls='clear'
 
@@ -49,16 +46,6 @@ alias mkdir='mkdir -p -v'
 
 # cd typo alias
 alias cd..='cd ..'
-
-# Show all logs in /var/log
-alias logs="sudo find /var/log -type f -exec file {} \; | grep 'text' | cut -d'$(
-)' -f1 | sed -e's/:$//g' | grep -v '[0-9]$' | xargs tail -f"
-
-# Star Wars
-alias starwars='telnet towel.blinkenlights.nl'
-
-# rg fzf fuzzy search file contents
-alias searchpwd='rg . | fzf --print0 -e'
 
 #######################################################
 # APPLICATION DEPENDENT ALIASES & BINDINGS
@@ -97,22 +84,6 @@ if type fzf &>/dev/null; then
 	. /usr/share/doc/fzf/examples/key-bindings.bash
 fi
 
-# wordnet aliases (terminal dictionary)
-if type wc &>/dev/null; then
-	# lookup a words definitions. ex: definition bash
-	definition() {
-		wn $1 -over
-	}
-	# lookup a words synonyms. ex: synonym bash
-	synonym() {
-		wn $1 -synsn -synsv -synsa -synsr
-	}
-	# lookup a words antonyms. ex: antonym bash
-	antonym() {
-		wn $1 -antsn -antsv -antsa -antsr
-	}
-fi
-
 #######################################################
 # FUNCTIONS
 #######################################################
@@ -148,8 +119,6 @@ install_bashrc_commands() {
 	sudo apt-get install -y fortune-mod
 	# fzf is a general-purpose command-line fuzzy finder.
 	sudo apt-get install -y fzf
-	# multitail monitors logfiles and command output in multiple windows.
-	sudo apt-get install -y multitail
 	# ripgrep recursively searches your current directory for with a regex.
 	sudo apt-get install -y ripgrep
 	# tldr shows usage examples of a command, similar to man
@@ -160,10 +129,6 @@ install_bashrc_commands() {
 	sudo apt-get install -y unp
 	# vim is an advanced terminal editor
 	sudo apt-get install -y vim
-	# wordnet is a commandline thesaurus and dictionary
-	sudo apt-get install -y wordnet
-	# xcape allows for mapping a key tap vs a key hold
-	sudo apt-get install -y xcape
 	# xclip allows easy commandline access to the clipboard
 	sudo apt-get install -y xclip
 
