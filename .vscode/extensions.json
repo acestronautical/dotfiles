@@ -4,16 +4,16 @@
 	// List of extensions which should be recommended for users of this workspace.
 	"recommendations": [
 		"ms-azuretools.vscode-docker",
-		"ms-vsliveshare.vsliveshare-pack",
-		"ms-python.python",
+		"ms-vscode-remote.vscode-remote-extensionpack",
 		"ms-python.vscode-pylance",
+		"ms-ossdata.vscode-postgresql",
+		"eamodio.gitlens",
+		// language support
+		"ms-python.python",
 		"golang.go",
 		"ms-vscode.cpptools",
-		"ms-vscode.cpptools-extension-pack",
-		"eg2.vscode-npm-script",
-		"dbaeumer.vscode-eslint",
-		"ms-vscode.cmake-tools",
-		"ms-ossdata.vscode-postgresql",
+		"redhat.vscode-yaml",
+		"yzhang.markdown-all-in-one"
 	],
 	// List of extensions recommended by VS Code that should not be recommended for users of this workspace.
 	"unwantedRecommendations": []

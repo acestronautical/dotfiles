@@ -1,6 +1,5 @@
 {
     "C_Cpp.clang_format_fallbackStyle": "llvm", //  use compact formatting
-    "C_Cpp.updateChannel": "Insiders", // get cpp beta features
     "diffEditor.ignoreTrimWhitespace": false, // don't ignore git diff ws
     "editor.autoClosingBrackets": "never", // don't complete brackets
     "editor.autoClosingQuotes": "never", // don't complete quotes
@@ -19,7 +18,6 @@
             "color": "#66666644"
         },
     ], // visual guides for line limit at 80 and 120
-    "editor.scrollBeyondLastLine": false, // stop scrolling at the bottom
     "editor.suggest.preview": true, // better tab autocomplete
     "explorer.compactFolders": false, // show full subfolder structure icons
     "explorer.confirmDelete": false, // don't ask when I delete files
@@ -34,7 +32,7 @@
         "**/*.code-search": true,
         "**/venv": true,
         "**/vendor": true,
-        "**/build": true,
+        "**/build": false,
         "**/migrations": true,
     }, // don't search in non project code folders
     "telemetry.telemetryLevel": "off", // disable telemetry

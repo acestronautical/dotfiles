@@ -63,10 +63,10 @@ fi
 
 # alias xclip to systemwide clipboard if installed
 if type xclip &>/dev/null; then
-	# copy to clipboard. ex: cat file1 | toclip
-	alias toclip='xclip -selection clipboard'
-	# paste from clipboard. ex: fromclip > file1 OR fromclip | cat
-	alias fromclip='xclip -o -selection clipboard'
+	# copy to clipboard. ex: cat file1 | clipboard-copy
+	alias clipboard-copy='xclip -selection clipboard'
+	# paste from clipboard. ex: clipboard-paste | cat
+	alias clipboard-paste='xclip -o -selection clipboard'
 fi
 
 # the cow says things if cowsay and fortune are installed
@@ -92,8 +92,8 @@ fi
 # needs xclip to copy to system clipboard
 ssh-key-now() {
 	cat /dev/zero | ssh-keygen -t ed25519 -C "made with ssh-key-now" -q -N ""
-	xclip -sel clip <~/.ssh/id_ed25519.pub
-	echo "ssh-key copied to clipboard"
+	echo
+	ssh-agent sh -c 'ssh-add; ssh-add -L'
 }
 
 # Automatically do an ls after each cd
